@@ -45,6 +45,8 @@ regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
   return(rval)
 }
 
+## -------------------------------------------------------- #
+
 plot.regsubsets.selected <- function(
   x, col = c("white", "black"), ...) {
   require(leaps)
@@ -67,6 +69,8 @@ plot.regsubsets.selected <- function(
   axis(side = 2, at = 1:ncol(which), labels = colnames(which), las = 2)
   invisible()
 }
+
+## -------------------------------------------------------- #
 
 plot.regsubsets.err <- function(
   x, data, yname, criteria = c("aic", "bic", "rss", "rsq", "adjr2"), ...) {
@@ -100,6 +104,8 @@ plot.regsubsets.err <- function(
   abline(v = which.min(err) - 1, col = "red", lty = 2)
   invisible()
 }
+
+## -------------------------------------------------------- #
 
 regsubset.getbestmodel <- function(
   object, data, yname, criteria = c("aic", "bic", "rss", "rsq", "adjr2")) {
