@@ -1,3 +1,24 @@
+## -------------------------------------------------------- #
+## Author: Reto Buergin, rbuergin@gmx.ch
+##
+## Contents:
+## R-Functions that extend the 'regsubset' function from 
+## the R-package 'leaps'
+## - regsubsets.AIC: Extracts the AIC of the best models
+##      per number of predictors.
+## - plot.regsubsets.selected: Visualize the best models
+##      per number of predictors using the 'image' function.
+##      Includes also the model without predictors.
+## - plot.regsubsets.err: Visualize the estimated prediction
+##      error (electively AIC, BIC, ...) from the best models
+##      per number of predictors in a scatter plot.
+## - regsubset.getbestmodel: Extract the best model from
+##      a 'regsubset' object.
+##
+## Modifications:
+## 2021-10-14: Create file
+## -------------------------------------------------------- #
+
 regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
   require(leaps)
   stopifnot(inherits(object, "regsubsets"))
@@ -104,3 +125,5 @@ regsubset.getbestmodel <- function(
     data = data)
   return(rval)
 }
+
+## EOF ---------------------------------------------------- #
