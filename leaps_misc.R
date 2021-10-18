@@ -1,3 +1,25 @@
+## -------------------------------------------------------- #
+## Author: Reto Buergin, rbuergin@gmx.ch
+##
+## Contents:
+## R-Functions that extend the 'regsubset' function from 
+## the R-package 'leaps'
+## - regsubsets.AIC: Extracts the AIC of the best models
+##      per number of predictors.
+## - plot.regsubsets.selected: Visualize the best models
+##      per number of predictors using the 'image' function.
+##      Includes also the model without predictors.
+## - plot.regsubsets.err: Visualize the estimated prediction
+##      error (electively AIC, BIC, ...) from the best models
+##      per number of predictors in a scatter plot.
+## - regsubset.getbestmodel: Extract the best model from
+##      a 'regsubset' object.
+##
+## Modifications:
+## 2021-10-18: Add comments
+## 2021-10-14: Create file
+## -------------------------------------------------------- #
+
 regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
   require(leaps)
   stopifnot(inherits(object, "regsubsets"))
@@ -24,6 +46,8 @@ regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
   return(rval)
 }
 
+## -------------------------------------------------------- #
+
 plot.regsubsets.selected <- function(
   x, col = c("white", "black"), ...) {
   require(leaps)
@@ -46,6 +70,8 @@ plot.regsubsets.selected <- function(
   axis(side = 2, at = 1:ncol(which), labels = colnames(which), las = 2)
   invisible()
 }
+
+## -------------------------------------------------------- #
 
 plot.regsubsets.err <- function(
   x, data, yname, criteria = c("aic", "bic", "rss", "rsq", "adjr2"), ...) {
@@ -80,6 +106,8 @@ plot.regsubsets.err <- function(
   invisible()
 }
 
+## -------------------------------------------------------- #
+
 regsubset.getbestmodel <- function(
   object, data, yname, criteria = c("aic", "bic", "rss", "rsq", "adjr2")) {
   require(leaps)
@@ -104,3 +132,5 @@ regsubset.getbestmodel <- function(
     data = data)
   return(rval)
 }
+
+## EOF ---------------------------------------------------- #
