@@ -17,7 +17,7 @@
 ##
 ## Modifications:
 ## 2021-10-18: Add comments
-## 2021-10-14: Create file
+## 2021-10-13: Create file
 ## -------------------------------------------------------- #
 
 regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
