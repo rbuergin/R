@@ -16,6 +16,10 @@
 ##      a 'regsubset' object.
 ##
 ## Modifications:
+<<<<<<< HEAD
+=======
+## 2021-10-18: Add comments
+>>>>>>> devel
 ## 2021-10-14: Create file
 ## -------------------------------------------------------- #
 
