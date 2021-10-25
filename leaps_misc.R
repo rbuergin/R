@@ -16,12 +16,21 @@
 ##      a 'regsubset' object.
 ##
 ## Modifications:
-<<<<<<< HEAD
-=======
+## 2021-10-25: Add help for 'regsubsets.AIC'
 ## 2021-10-18: Add comments
->>>>>>> devel
-## 2021-10-14: Create file
+## 2021-10-13: Create file
 ## -------------------------------------------------------- #
+
+#' @title Extract AIC from `regsubset` objects
+#' 
+#' @description Extracts AIC of several models of a `regsubset` object.
+#' 
+#' @param object a `regsubset` object
+#' @param data a `data.frame` that was used to create the `regsubset` object
+#' @param yname a single character giving the name of the response variable 
+#'    used to compute the `regsubset` object
+#' @param nullModel a single logical whether the AIC of the null model 
+#'    without predictors should also be returned.
 
 regsubsets.AIC <- function(object, data, yname, nullModel = FALSE) {
   require(leaps)
